@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html,
+body{
+    font-size: 16px;
+    background-color: #100f13;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.components-items{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-items: space-between;
+}
+
+* {
+    --scrollbar-foreground: #999;
+    --scrollbar-background: #333;
+    --scrollbar-size: 10px;
+    /* плашка-бегунок, фон */
+    scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+*::-webkit-scrollbar {
+    width: var(--scrollbar-size); /* в основном для вертикальных полос прокрутки */
+    height: var(--scrollbar-size); /* в основном для горизонтальных полос прокрутки */
+}
+*::-webkit-scrollbar-thumb { /* плашка-бегунок */
+    background: var(--scrollbar-foreground); /* фон */
+}
+*::-webkit-scrollbar-track { /* фон */
+    background: var(--scrollbar-background);
+}

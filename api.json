@@ -1,0 +1,135 @@
+[
+    {
+        "id": 0,
+        "title": "Главная",
+        "name": "home",
+        "link": "/home",
+        "subtabs": [],
+        "components": [
+            {
+                "id": 0,
+                "title": "Тестовый компонент",
+                "type": 1,
+                "size": 1,
+                "data": "http://api.badbull.com/requests",
+                "subcomponents": []
+            },
+            {
+                "id": 1,
+                "title": "Тестовый компонент",
+                "type": 1,
+                "size": 1,
+                "data": "http://api.badbull.com/requests",
+                "subcomponents": []
+            },
+            {
+                "id": 2,
+                "title": "Тестовый компонент",
+                "type": 1,
+                "size": 1,
+                "data": "http://api.badbull.com/requests",
+                "subcomponents": []
+            },
+            {
+                "id": 3,
+                "title": "Тестовый компонент",
+                "type": 1,
+                "size": 1,
+                "data": "http://api.badbull.com/requests",
+                "subcomponents": []
+            },
+            {
+                "id": 4,
+                "title": "Тестовый компонент",
+                "type": 1,
+                "size": 2,
+                "data": "http://api.badbull.com/requests",
+                "subcomponents": []
+            },
+            {
+                "id": 5,
+                "title": "Тестовый компонент",
+                "type": 1,
+                "size": 3,
+                "data": "http://api.badbull.com/requests",
+                "subcomponents": []
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "title": "Заявки",
+        "name": "requests",
+        "link": "",
+        "subtabs": [
+            {
+                "id": 2,
+                "title": "Мои заявки",
+                "name": "my",
+                "link": "/requests/my",
+                "components": []
+            },
+            {
+                "id": 3,
+                "title": "Все заявки",
+                "name": "all",
+                "link": "/requests/all",
+                "components":[
+                    {
+                        "id": 0,
+                        "title": "Таблица заявок",
+                        "type": 0,
+                        "data": "http://api.badbull.com/requests",
+                        "subcomponents": []
+                    }
+                ]
+            }
+        ],
+        "components": []
+    },
+    {
+        "id": 4,
+        "title": "Cisco Finess",
+        "name": "cisco",
+        "link": "",
+        "subtabs": [
+            {
+                "id": 5,
+                "title": "Домашняя страница",
+                "name": "home",
+                "link": "/cisco/home",
+                "components": []
+            },
+            {
+                "id": 6,
+                "title": "Мой журнал",
+                "name": "journal",
+                "link": "/cisco/journal",
+                "components": []
+            },
+            {
+                "id": 7,
+                "title": "Моя статистика",
+                "name": "statistic",
+                "link": "/cisco/statistic",
+                "components": []
+            },
+            {
+                "id": 8,
+                "title": "Телефонная книга",
+                "name": "phone-book",
+                "link": "/cisco/phone-book",
+                "components": []
+            }
+        ],
+        "components": []
+    },
+    {
+        "id": 9,
+        "title": "Тестовая страница",
+        "name": "test",
+        "link": "/test",
+        "subtabs": [],
+        "components": []
+    }
+]
