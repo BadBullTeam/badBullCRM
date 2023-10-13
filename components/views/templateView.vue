@@ -26,8 +26,8 @@
                     </transition>
                 </button>
             </div>
-            <ui-tableUI v-if="component.type == 0"/>
-            <ui-test/>
+            <views-tableView v-if="component.type == 0"/>
+            <views-testViews/>
         </div>
     </div>
 </template>
