@@ -46,9 +46,9 @@ export default {
                     username: this.user.username,
                     password: this.user.password
                 },
-                {
-                    withCredentials: true
-                },
+                // {
+                //     withCredentials: true
+                // },
                 ).then((resp)=>{
                     console.log(resp);
                     useCrmStore().user = resp.data

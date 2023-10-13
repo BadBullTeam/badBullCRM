@@ -30,6 +30,7 @@ export default{
     beforeMount(){
         this.route = useRoute()
         this.tab = useCrmStore().tabs.filter((tab)=> this.route.params.tabs == tab.name)[0]
+        
     },
 }
 </script>

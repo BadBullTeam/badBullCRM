@@ -38,7 +38,7 @@ export default {
     .input-container input{
         background-color: #212121;
         border: none;
-        border-radius: .5rem;
+        /* border-radius: .5rem; */
         font-size: 1.2rem;
         padding: .2rem .5rem;
     }

@@ -15,7 +15,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 0,
                             title: "Тестовый компонент",
-                            type: 1,
+                            type: -1,
                             size: 1,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -23,7 +23,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 1,
                             title: "Тестовый компонент",
-                            type: 1,
+                            type: -1,
                             size: 1,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -31,7 +31,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 2,
                             title: "Тестовый компонент",
-                            type: 1,
+                            type: -1,
                             size: 1,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -39,7 +39,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 3,
                             title: "Тестовый компонент",
-                            type: 1,
+                            type: -1,
                             size: 1,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -47,7 +47,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 4,
                             title: "Тестовый компонент",
-                            type: 1,
+                            type: -1,
                             size: 2,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -55,7 +55,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 5,
                             title: "Тестовый компонент",
-                            type: 1,
+                            type: -1,
                             size: 3,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -64,21 +64,21 @@ export const useCrmStore = defineStore('crm', {
                 },
                 {
                     id: 0,
-                    title: "Главная",
+                    title: "Тест",
                     name: "asd",
                     link: "/asd",
                     subtabs: [
                         {
                             id: 0,
-                            title: "Главная",
+                            title: "Тестовый компонент",
                             name: "home",
                             link: "/home",
                             subtabs: [],
                             components:[
                                 {
                                     id: 5,
-                                    title: "Тестовый компонент",
-                                    type: 0,
+                                    title: "Таск менеджер",
+                                    type: 2,
                                     size: 0,
                                     data: "http://api.badbull.com/requests",
                                     subcomponents: []

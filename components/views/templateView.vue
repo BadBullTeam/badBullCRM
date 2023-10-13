@@ -27,7 +27,9 @@
                 </button>
             </div>
             <views-tableView v-if="component.type == 0"/>
-            <views-testViews/>
+            <views-testView v-if="component.type == -1"/>
+            <views-messangerView v-if="component.type == 1"/>
+            <views-taskmanagerView v-if="component.type == 2"/>
         </div>
     </div>
 </template>
@@ -94,6 +96,7 @@ export default {
         padding: 2rem;
         height: 100%;
         width: 100%;
+        overflow: hidden;
     }
 
     .component .component-title{

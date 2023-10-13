@@ -29,7 +29,8 @@ export default{
     
     beforeMount(){
         this.route = useRoute()
-        this.tab = useCrmStore().tabs.filter((tab)=> this.route.params.tabs == tab.name)[0]
+        this.tab = useCrmStore().tabs.filter((tab)=> this.route.params.tabs == tab.name)[0].subtabs.filter(subtab=> this.route.params.subtabs == subtab.name)[0]
+        console.log(this.tab);
     },
 }
 </script>

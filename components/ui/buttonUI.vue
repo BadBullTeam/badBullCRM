@@ -18,8 +18,8 @@ export default {
         background-color: #317961;
         border: none;
         font-size: 1.2rem;
-        padding: .5rem;
-        border-radius: 1rem;
+        padding: .2rem .5rem;
+        /* border-radius: 1rem; */
         cursor: pointer;
     }
 </style>
