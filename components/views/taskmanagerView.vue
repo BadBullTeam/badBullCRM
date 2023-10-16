@@ -12,6 +12,33 @@
                         <span>Встретить мастера <br> по вентиляции</span>
                     </div>
                 </li>
+                <li class="subtask">
+                    <div class="user-task">
+                        <span>ДМ</span>
+                    </div>
+                    <div class="task-until">14.10.2023 14:06</div>
+                    <div class="subtask-title">
+                        <span>Встретить мастера <br> по вентиляции</span>
+                    </div>
+                </li>
+                <li class="subtask">
+                    <div class="user-task">
+                        <span>ДМ</span>
+                    </div>
+                    <div class="task-until">14.10.2023 14:06</div>
+                    <div class="subtask-title">
+                        <span>Встретить мастера <br> по вентиляции</span>
+                    </div>
+                </li>
+                <li class="subtask">
+                    <div class="user-task">
+                        <span>ДМ</span>
+                    </div>
+                    <div class="task-until">14.10.2023 14:06</div>
+                    <div class="subtask-title">
+                        <span>Встретить мастера <br> по вентиляции</span>
+                    </div>
+                </li>
             </ul>
         </li>
         <li class="taskmanager-task">
@@ -116,12 +143,15 @@ export default {
         white-space: nowrap;
         overflow-x: auto;
         overflow-y: hidden;
+        padding: 1rem;
     }
 
     .taskmanager-task{
         height: 100%;
         min-width: 20rem;
-        background-color: #121212;
+        background-color: #f3f3f3;
+        border-radius: 1.5rem;
+        box-shadow: 0 .4rem .6rem .2rem rgba(0, 0, 0, .1);
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -132,18 +162,27 @@ export default {
     .subtasks{
         display: flex;
         flex-direction: column;
+        gap: 1rem;
         width: 100%;
+        overflow-y: auto;
     }
 
     .subtask{
-        background-color: #100f13;
+        background-color: #6f3eff;
+        
+        border-radius: 1.5rem;
         width: 100%;
-        height: 12rem;
+        min-height: 12rem;
         padding: 2rem;
         overflow: hidden;
     }
 
+    .subtasks::-webkit-scrollbar{
+        width: 0;
+    }
+
     .user-task{
+        
         margin-bottom: 1rem;
         border: 1px white solid;
         border-radius: 50%;
@@ -154,17 +193,23 @@ export default {
         align-items: center;
     }
 
+    .user-task span{
+        color: white;
+    }
+
     .task-until{
         font-size: .8rem;
-        color: #888;
+        color: #b9b9b9;
     }
 
     .taskmanager .subtask-title{
         max-width: 100%;
+        font-size: 1.2rem;
+        font-weight: bold;
         
     }
 
     .taskmanager .subtask-title span{
-        overflow-wrap: break-word;
+        color: white;
     }
 </style>

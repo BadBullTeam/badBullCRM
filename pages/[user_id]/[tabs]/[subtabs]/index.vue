@@ -39,7 +39,7 @@ export default{
     .add-component{
         width: 28%;
         height: 20rem;
-        background-color: #171320;
+        background-color: #f3f3f3;
         margin: 2rem;
         display: flex;
         justify-content: center;
@@ -49,7 +49,7 @@ export default{
 
     .add-component svg{
         transform: scale(3);
-        fill: white;
+        fill: black;
         transition: .3s;
     }
 

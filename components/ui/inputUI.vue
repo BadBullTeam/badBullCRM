@@ -1,20 +1,18 @@
 <template>
     <div class="input-container">
-        <span class="input-title">{{ title }}</span>
-        <input type="text" :maxlength="max">
-        <span class="input-tips" :class="error != '' ? 'error' : ''">{{ error != '' ? error : tip }}</span>
+        <span class="input-title" :class="title ? 'title' : ''">{{ title }}</span>
+        <input type="text" :maxlength="max" :placeholder="placeholder">
+        <span class="input-tips" :class="error ? 'error' : tips ? 'tips' : ''">{{ error != '' ? error : tip }}</span>
     </div>
 </template>
 <script>
 export default {
     props:{
-        value:{
+        placeholder:{
             type: String,
-            require: true
         },
         title:{
             type: String,
-            require: true
         },          
         max:{
             type: Number
@@ -36,15 +34,17 @@ export default {
     }
 
     .input-container input{
-        background-color: #212121;
-        border: none;
+        background-color: #F3F3F3;
+        border: 1px #888 solid;
+        border-radius: 15rem;
         /* border-radius: .5rem; */
         font-size: 1.2rem;
         padding: .2rem .5rem;
     }
 
-    .input-title,
-    .input-tips{
+    .input-title.title,
+    .input-tips.error,
+    .input-tips.tips{
         padding: .2rem;
     }
 

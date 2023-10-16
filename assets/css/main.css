@@ -4,14 +4,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: #fff;
+    color: #000;
     font-family: 'Montserrat', sans-serif;
 }
 
 html,
 body{
     font-size: 16px;
-    background-color: #100f13;
+    background-color: #6E789D;
+
 }
 
 a{
@@ -26,13 +27,14 @@ li{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    justify-items: space-between;
+    gap: 2rem;
+    padding: 2rem;
 }
 
 * {
-    --scrollbar-foreground: #999;
-    --scrollbar-background: #333;
-    --scrollbar-size: 10px;
+    --scrollbar-foreground: #f3f3f3;
+    --scrollbar-background: #c4c4c4;
+    --scrollbar-size: 12px;
     /* плашка-бегунок, фон */
     scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
 }
@@ -42,7 +44,10 @@ li{
 }
 *::-webkit-scrollbar-thumb { /* плашка-бегунок */
     background: var(--scrollbar-foreground); /* фон */
+    border-radius: 1rem;
+    border: 2px var(--scrollbar-background) solid;
 }
 *::-webkit-scrollbar-track { /* фон */
     background: var(--scrollbar-background);
+    
 }

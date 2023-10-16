@@ -2,34 +2,38 @@
     <div class="component" :class="component.size == 1 ? 'size-1' : component.size == 2 ? 'size-2' : component.size == 3 ? 'size-3' : 'size-0'">
         <div class="draggable">
             <div class="component-title">
-                <h2>{{ component.title }}</h2>
-                <button @click="contextMenu()">
-                    <div class="btn-circle"></div>
-                    <div class="btn-circle"></div>
-                    <div class="btn-circle"></div>
-                    <transition name="context-menu">
-                        <ul @click.stop class="component-contextmenu" v-if="isContextMenu">
-                            <li class="component-contextmenu-item" @click="selectSubmenu(1)">
-                                <span>Размер</span>
-                                <transition name="subcontext-menu">
-                                    <ul @click.stop class="component-subcontextmenu" v-if="subContextMenu == 1">
-                                        <li class="component-subcontextmenu-item" @click="changeSize(1)">1 блок</li>
-                                        <li class="component-subcontextmenu-item" @click="changeSize(2)">2 блока</li>
-                                        <li class="component-subcontextmenu-item" @click="changeSize(3)">3 блока</li>
-                                    </ul>
-                                </transition>
-                            </li>
-                            <li class="component-contextmenu-item">
-                                <span>Добавить данные</span>
-                            </li>
-                        </ul>
-                    </transition>
-                </button>
+                <div class="component-title-content">
+                    <h2>{{ component.title }}</h2>
+                    <button @click="contextMenu()">
+                        <div class="btn-circle"></div>
+                        <div class="btn-circle"></div>
+                        <div class="btn-circle"></div>
+                        <transition name="context-menu">
+                            <ul @click.stop class="component-contextmenu" v-if="isContextMenu">
+                                <li class="component-contextmenu-item" @click="selectSubmenu(1)">
+                                    <span>Размер</span>
+                                    <transition name="subcontext-menu">
+                                        <ul @click.stop class="component-subcontextmenu" v-if="subContextMenu == 1">
+                                            <li class="component-subcontextmenu-item" @click="changeSize(1)">1 блок</li>
+                                            <li class="component-subcontextmenu-item" @click="changeSize(2)">2 блока</li>
+                                            <li class="component-subcontextmenu-item" @click="changeSize(3)">3 блока</li>
+                                        </ul>
+                                    </transition>
+                                </li>
+                                <li class="component-contextmenu-item">
+                                    <span>Добавить данные</span>
+                                </li>
+                            </ul>
+                        </transition>
+                    </button>
+                </div>
             </div>
             <views-tableView v-if="component.type == 0"/>
             <views-testView v-if="component.type == -1"/>
             <views-messangerView v-if="component.type == 1"/>
             <views-taskmanagerView v-if="component.type == 2"/>
+            <views-schedulerView v-if="component.type == 3"/>
+            <views-pieView v-if="component.type == 4"/>
         </div>
     </div>
 </template>
@@ -86,28 +90,35 @@ export default {
 </script>
 <style>
     .component{
-        margin: 2rem;
-        height: 20rem;
+        height: 25rem;
         transition: .3s;
     }
     
     .component .draggable{
-        background-color: #0b0a0e;
-        padding: 2rem;
+        background-color: #E9E9E9;
         height: 100%;
         width: 100%;
-        overflow: hidden;
+        border-radius: 2.5rem;
+        padding-bottom: 2rem;
+        
     }
 
     .component .component-title{
+        padding: 2rem;
+        background-color: #f3f3f3;
+        height: 6rem;
+        border-radius: 2.5rem 2.5rem 0 0;
+    }
+
+    .component .component-title-content{
         display: flex;
         justify-content: space-between;
         margin-bottom: 2rem;
-        border-bottom: 2px solid #100f13;
         padding-bottom: 2rem;
+        
     }
 
-    .component .component-title button{
+    .component .component-title-content button{
         background-color: transparent;
         border: none;
         display: flex;
@@ -122,22 +133,17 @@ export default {
         position: relative;
     }
 
-    .component .component-title button:hover{
-        background-color: #212121;
-    }
-
     .btn-circle{
         width: .3rem;
         height: .3rem;
-        background-color: white;
-        border-radius: 50%;
+        background-color: #000;
     }
 
     .component-contextmenu{
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: #212121;
+        background-color: #f3f3f3;
         box-shadow: 0 .5rem .5rem  rgba(0, 0, 0, .3);
         z-index: 2;
     }
@@ -151,7 +157,7 @@ export default {
         position: absolute;
         top: 0;
         left: 105%;
-        background-color: #121212;
+        background-color: #f3f3f3;
         box-shadow: 0 .5rem .5rem  rgba(0, 0, 0, .3);
         z-index: -2;
     }
@@ -162,17 +168,17 @@ export default {
     }
 
     .component.size-0{
-        width: 98%;
+        width: 79rem;
         height: auto;
     }
     .component.size-1{
-        width: 28%;
+        width: 25rem;
     }
     .component.size-2{
-        width: 60%;
+        width: 52rem;
     }
     .component.size-3{
-        width: 92%;
+        width: 79rem;
     }
 
     .component:last-child{

@@ -1,7 +1,7 @@
 <template>
     <div class="table-ui">
         <div class="table-search">
-            <input type="text" placeholder="Поиск" @input="search">
+            <ui-inputUI type="text" :placeholder="'Поиск'" @input="search"/>
         </div>
         <div class="table-ui-content" @mousedown="tableResize" @mouseup="tableResize" @mousemove="tableResize" @mouseleave="tableResize">
             <table cellpadding="0" cellspacing="0">
@@ -71,7 +71,7 @@ export default {
             if (e.type === "mousemove") {
                 if (!this.tMouse.target || !this.tMouse.isMouseDown) return false;
                 let size = (e.clientX - this.tMouse.targetWidth) - this.tMouse.targetPosX;
-                this.tMouse.target.style.width = this.tMouse.targetWidth + size + "px";
+                this.tMouse.target.style.cssText = `width: ${this.tMouse.targetWidth + size}px !important;`;
             }
         }
     },
@@ -212,17 +212,17 @@ export default {
 <style>
     .table-ui-content{
         margin-top: 2rem;
+        padding: 1rem;
     }
 
     table{
-        color: white;
         display: block;
         width: 100%;
         overflow: auto;
     }
 
     tr:nth-child(even){
-        background-color: #313131;
+        background-color: #f3f3f3;
         
     }
 
@@ -243,25 +243,29 @@ export default {
     .table-ui th{
         padding: .5rem;
         border-bottom: 2px solid #424242;
+        border-top: 2px solid #424242;
         position: relative;
     }
 
+    .table-ui th:first-child{
+        border-left: 2px solid #424242;
+    }
+
     .table-ui th .table-resize{
-        cursor:col-resize;
+        cursor: col-resize;
         position: absolute;
-        right: -0.25rem;
+        right: 0rem;
         top: 0;
-        width: .5rem;
+        width: 2px;
         height: 100%;
         z-index: 2;
-        opacity: .05;
-        background-color: #888;
+        background-color: #424242;
         border: none;
     }
 
     .table-search{
         padding: 1rem;
-        background-color: #100f13;
+        border-bottom: 3px #f3f3f3 solid;
     }
 
     .table-search input{
@@ -289,13 +293,13 @@ export default {
         left: 0;
         display: flex;
         z-index: 10;
-        background-color: rgba(0, 0, 0, .3);
+        background-color: rgba(255, 255, 255, .2);
         backdrop-filter: blur(1rem);
     }
 
     .table-popup .table-popup_contant{
         margin: auto;
-        background-color: #100f13;
+        background-color: #f3f3f3;
         padding: 3rem;
         display: flex;
         flex-direction: column;

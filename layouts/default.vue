@@ -1,6 +1,7 @@
 <template>
     <main>
         <layouts-sidebar/>
+        <layouts-header/>
         <div class="main-container">
             <slot  />
         </div>

@@ -1,8 +1,5 @@
 <template>
     <aside class="sidebar">
-        <div class="user-info">
-            <span>{{ user?.lastname + ' ' + user?.firstname }}</span>
-        </div>
         <ul class="sidebar-tabs">
             <li class="sidebar-tab" v-for="(tab, id) in tabs" :key="id" :class="tab.subtabs.length ? 'with-subtabs' : ''">
                 <div class="sidebar-tab-title closed" v-if="tab.subtabs.length" @click="this.subtabsOpener">
@@ -120,8 +117,10 @@ export default {
         left: 0;
         width: 15rem;
         height: 100vh;
-        background-color: #0a090c;
+        background-color: #F3F3F3;
         z-index: 10;
+        padding-top: 15rem;
+        border-radius: 0 2rem 2rem 0;
     }
 
     .sidebar-tabs{
@@ -132,16 +131,11 @@ export default {
     }
 
     .sidebar-tabs::-webkit-scrollbar {
-        width: 0px;               /* ширина scrollbar */
+        width: 0px;
     }
 
     .sidebar-tab{
         width: 100%;
-        border-bottom: 3px solid #171320;
-    }
-
-    .sidebar-tab:first-child{
-        border-top: 3px solid #171320;
     }
 
     .sidebar-tab .sidebar-tab-title{
@@ -173,22 +167,21 @@ export default {
     }
 
     .sidebar-tab a:hover{
-        box-shadow: inset -6rem 0px 5rem -5rem rgba(73, 45, 138, .6);
+        box-shadow: inset -6rem 0px 5rem -5rem rgba(115, 71, 218, 0.6);
     }
 
     .router-link-active{
-        box-shadow: inset 6rem 0px 5rem -5rem rgba(49, 121, 97, 0.6);
+        box-shadow: inset 6rem 0px 5rem -5rem rgba(90, 219, 176, .6);
     }
 
     .sidebar-tab a.router-link-active:hover{
-        box-shadow: inset 6rem 0px 5rem -5rem rgba(49, 121, 97, 0.6),
-                    inset -6rem 0px 5rem -5rem rgba(73, 45, 138, .6);
+        box-shadow: inset 6rem 0px 5rem -5rem rgba(90, 219, 176, .6),
+                    inset -6rem 0px 5rem -5rem rgba(115, 71, 218, 0.6);
     }
 
     .sidebar-tab-subtabs{
         overflow: hidden;
         transition: .3s;
-        border-top: 1px solid #171320;  
     }
 
     .sidebar-tab-title.closed ~ .sidebar-tab-subtabs{
@@ -201,10 +194,6 @@ export default {
         transform: scale(1.5) translateX(1rem) translateY(.1rem) rotate(0);
     }
 
-    .sidebar-tab-subtab{
-        border-bottom: 1px solid #171320;
-    }
-
     .sidebar-tab-subtab .sidebar-tab-title{
         font-size: 1rem;
     }
@@ -212,7 +201,7 @@ export default {
     .add-tab{
         width: 100%;
         height: 5rem;
-        background-color: #171320;
+        background-color: #dddddd;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -233,18 +222,19 @@ export default {
         top: 50%;
         left: 105%;
         transform: translateY(-50%);
-        background-color: #131116;
+        background-color: #F3F3F3;
         padding: 1rem;
         box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, .3);
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        border-radius: 1rem;
     }
 
     .add-tab-popup hr{
         border: none;
         height: 1px;
-        background-color: #317961;
+        background-color: #5adbb0;
     }
 
     .addtab-enter-active,
@@ -266,7 +256,7 @@ export default {
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        border-bottom: 1px solid #171320;
+        border-bottom: 1px solid #5adbb0;
     }
 
     .user-info img{
