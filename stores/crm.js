@@ -77,8 +77,8 @@ export const useCrmStore = defineStore('crm', {
                             components:[
                                 {
                                     id: 5,
-                                    title: "Таблица заявок",
-                                    type: 4,
+                                    title: "Календарь",
+                                    type: 5,
                                     size: 1,
                                     data: "http://api.badbull.com/requests",
                                     subcomponents: []

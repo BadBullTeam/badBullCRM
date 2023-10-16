@@ -5,6 +5,7 @@
         <span class="input-tips" :class="error ? 'error' : tips ? 'tips' : ''">{{ error != '' ? error : tip }}</span>
     </div>
 </template>
+
 <script>
 export default {
     props:{
@@ -17,7 +18,7 @@ export default {
         max:{
             type: Number
         },
-        tip:{
+        tips:{
             type: String
         },
         error:{
@@ -27,6 +28,7 @@ export default {
 
 }
 </script>
+
 <style>
     .input-container{
         display: flex;

@@ -1,4 +1,11 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Notification, ipcRenderer } from 'electron'
+
+class AppEvents{
+  showNotification (title : string, body : string) {
+      new Notification({ title: title, body: body }).show()
+  }
+}
+
 
 app.whenReady().then(() => {
   new BrowserWindow({
@@ -6,5 +13,7 @@ app.whenReady().then(() => {
     height: 768,
     minWidth: 800,
     minHeight: 600
-  }).loadURL('26.226.100.195:3000')
+  }).loadURL(process.env.VITE_DEV_SERVER_URL)
 })
+
+export default new AppEvents();

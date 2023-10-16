@@ -4,6 +4,10 @@
             <li class="sidebar-tab" v-for="(tab, id) in tabs" :key="id" :class="tab.subtabs.length ? 'with-subtabs' : ''">
                 <div class="sidebar-tab-title closed" v-if="tab.subtabs.length" @click="this.subtabsOpener">
                     <span>{{ tab.title }}</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.4851 15.535L12.0001 7.05005L3.51511 15.535L4.92911 16.95L12.0001 9.87805L19.0711 16.95L20.4851 15.535Z" fill="#323232"/>
+                    </svg>
+
                 </div>
                 <NuxtLink :to="`/${user.id + tab.link}`" class="sidebar-tab-title" v-else>
                     <span>{{ tab.title }}</span>
@@ -150,8 +154,7 @@ export default {
         z-index: 2;
     }
 
-    .with-subtabs .sidebar-tab-title::after{
-        content: '˅';
+    .with-subtabs .sidebar-tab-title svg{
         transform: scale(1.5) translateX(1rem) translateY(.1rem) rotate(180deg);
         transition: .3s;
     }
@@ -190,7 +193,7 @@ export default {
         border-top: 0px solid #171320;
     }
 
-    .with-subtabs .sidebar-tab-title.closed::after{
+    .with-subtabs .sidebar-tab-title.closed svg{
         transform: scale(1.5) translateX(1rem) translateY(.1rem) rotate(0);
     }
 

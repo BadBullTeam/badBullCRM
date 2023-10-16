@@ -34,6 +34,7 @@
             <views-taskmanagerView v-if="component.type == 2"/>
             <views-schedulerView v-if="component.type == 3"/>
             <views-pieView v-if="component.type == 4"/>
+            <views-calendarView v-if="component.type == 5"/>
         </div>
     </div>
 </template>
@@ -90,7 +91,7 @@ export default {
 </script>
 <style>
     .component{
-        height: 25rem;
+        height: 30rem;
         transition: .3s;
     }
     

@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <h1>Создай CRM которую <br> хочешь <span>именно ты!</span></h1>
-                    <button id="try-button" @mouseover="hoverButton" @click="activateSign('signup')" class="try-button">Попробовать</button>
+                    <button id="try-button" @mouseover="hoverButton" @click="test()" class="try-button">Попробовать</button>
                     <div class="buttons-bg">
                         <ul class="buttons-bg-items">
                             <li class="buttons-bg-item">
@@ -97,6 +97,7 @@
 import { useCrmStore } from '@/stores/crm'
 import confetti from "canvas-confetti"
 import axios from "axios"
+
 
 export default{
     data(){
@@ -150,6 +151,43 @@ export default{
                 spread: 70,
                 origin: { y: 0.6 }
             });
+        },
+        test(){
+            if(!("Notification" in window)){
+                alert("Не поддерживается")
+            }
+            else if(Notification.permission == "granted"){
+                const notification = new Notification(
+                    'LO SIENTO OCURRIO EL ERROR:',
+                    {
+                        icon: 'https://sun9-27.userapi.com/impg/u-l0ci4VIKQMQlkneE9CmP_4R6BDvHJDsa4fEw/j5zCm2cB_HA.jpg?size=736x484&quality=95&sign=f3957db263959da6452f9a006c319b13&type=album',
+                        body: 'asd',
+                    }
+                );
+                notification.onclick = ()=>{
+                    console.log('clicked');
+                    notification.close();
+                }
+            }
+            else if(Notification.permission != "denied"){
+                Notification.requestPermission((permission)=>{
+                    if(permission == "granted"){
+                        const notification = new Notification(
+                            'LO SIENTO OCURRIO EL ERROR:',
+                            {
+                                icon: 'https://sun9-27.userapi.com/impg/u-l0ci4VIKQMQlkneE9CmP_4R6BDvHJDsa4fEw/j5zCm2cB_HA.jpg?size=736x484&quality=95&sign=f3957db263959da6452f9a006c319b13&type=album',
+                                body: 'asd',
+                            }
+                        );
+                        notification.onclick = ()=>{
+                            console.log('clicked');
+                            notification.close();
+                        }
+                    }
+                })
+            }
+            
+        
         }
     },
     beforeCreate(){
