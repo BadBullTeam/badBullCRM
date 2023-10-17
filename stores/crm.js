@@ -3,7 +3,11 @@ import { defineStore } from 'pinia'
 export const useCrmStore = defineStore('crm', {
     state: () => {
         return {
-            user:{},
+            user:{
+                id:'kjsdhf-12l3kn4-lkawen5t',
+                firstname: 'Дмитрий',
+                lastname: 'Махов',
+            },
             tabs:[
                 {
                     id: 0,
@@ -15,7 +19,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 0,
                             title: "Тестовый компонент",
-                            type: -1,
+                            type: 4,
                             size: 1,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -23,7 +27,7 @@ export const useCrmStore = defineStore('crm', {
                         {
                             id: 1,
                             title: "Тестовый компонент",
-                            type: -1,
+                            type: 5,
                             size: 1,
                             data: "http://api.badbull.com/requests",
                             subcomponents: []
@@ -78,7 +82,7 @@ export const useCrmStore = defineStore('crm', {
                                 {
                                     id: 5,
                                     title: "Календарь",
-                                    type: 5,
+                                    type: 3,
                                     size: 1,
                                     data: "http://api.badbull.com/requests",
                                     subcomponents: []

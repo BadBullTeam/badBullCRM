@@ -1,14 +1,14 @@
 <template>
     <div class="pie">
         <div class="pie-graphs">
-            <div class="pie-graph" :style="{'--color': '#f3f3f3', '--ng': '360deg' }"></div>
-            <div class="pie-graph" v-for="graph in graphs" :key="graph.id" :style="{'--color': graph.color, '--ng': graph.deg + 'deg' }"></div>
+            <!-- <div class="pie-graph" :style="{'--color': '#f3f3f3', '--ng': '360deg' }"></div> -->
+            <div class="pie-graph" v-for="graph in graphs" :key="graph.id" :style="{'--color': graph.color, '--ng': 360 *(graph.count / graphs[0].count) + 'deg' }"></div>
         </div>
         <div class="graph-titles">
             <div class="graph-title" v-for="graph in graphs" :key="graph.id">
                 <div class="graph-color" :style="{'--color': graph.color}"></div>
                 <span class="graph-name">{{ graph.title }}</span> -
-                <span class="graph-precents">{{ Math.floor(graph.deg / 360 * 100) }}%</span>
+                <span class="graph-precents">{{ Math.floor(graph.count / graphs[0].count * 100) }}% - {{ graph.count }}</span>
             </div>
         </div>
     </div>
@@ -21,19 +21,19 @@ export default {
                 {
                     id:0,
                     color: '#EEB8F9',
-                    deg: 320,
+                    count: 320,
                     title: 'График 1'
                 },
                 {
                     id:1,
                     color: '#11D4B4',
-                    deg: 200,
+                    count: 200,
                     title: 'График 2'
                 },
                 {
                     id:2,
                     color: '#7F1CF9',
-                    deg: 60,
+                    count: 60,
                     title: 'График 3'
                 }
             ]
@@ -47,7 +47,7 @@ export default {
         height: 15rem;   
         padding-top: 1rem; 
         
-        --thickness: 1rem;
+        --thickness: 1.5rem;
         --_inner: calc(70% - var(--thickness));
         --_outer: calc(var(--_inner) + 1px);
         display: flex;
@@ -57,8 +57,8 @@ export default {
     }
 
     .pie-graphs{
-        width: 8rem;
-        height: 8rem; 
+        width: 10rem;
+        min-height: 10rem; 
         position: relative;
         --color: #f3f3f3;
         --ng: 0deg;
@@ -68,8 +68,8 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
-        width: 8rem;
-        height: 8rem; 
+        width: 10rem;
+        height: 10rem; 
         border-radius: 50%;
         mask: radial-gradient(circle, #0000 var(--_inner), #000 var(--_outer));
         background-image: conic-gradient(var(--color), var(--color) var(--ng), #0000 0);

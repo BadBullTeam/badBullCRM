@@ -1,12 +1,15 @@
 <template>
     <div @drop="onDrop($event, 1)" class="droppable">
-            <h1>{{ tab.title }}</h1>
-            <div class="components-items" >
-                <views-templateView class="component-item" v-for="component in tab.components" :key="component.id" :component="component"  :size="component.size"/>
-                <div class="add-component" :class="isAddComponent ? 'close' : ''" @click="onAddComponent()">
-                    <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_0_2895)"><path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></g><defs><clipPath id="clip0_0_2895"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
-                </div>
+        <Head>
+            <Title>Вкладка: {{ route.params.tabs }} | {{ user.lastname }} {{ user.firstname }}</Title>
+         </Head>
+        <h1>{{ tab.title }}</h1>
+        <div class="components-items" >
+            <views-templateView class="component-item" v-for="component in tab.components" :key="component.id" :component="component"  :size="component.size"/>
+            <div class="add-component" :class="isAddComponent ? 'close' : ''" @click="onAddComponent()">
+                <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_0_2895)"><path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></g><defs><clipPath id="clip0_0_2895"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
             </div>
+        </div>
     </div>
 </template>
 
@@ -19,6 +22,7 @@ export default{
             tab: {},
             route: {},
             isAddComponent: false,
+            user: {},
         }
     },
     methods:{
@@ -29,8 +33,22 @@ export default{
     
     beforeMount(){
         this.route = useRoute()
-        this.tab = useCrmStore().tabs.filter((tab)=> this.route.params.tabs == tab.name)[0]
         
+        
+        
+        if(!useCrmStore().user.id){
+            this.$router.push(`/`);
+        }
+        else{
+            if(this.$route.params.user_id != useCrmStore().user.id){
+                this.$router.push(`/${useCrmStore().user.id}/${this.route.params.tabs}`);
+            }
+            else{
+                this.user = useCrmStore().user
+            }
+        }
+
+        this.tab = useCrmStore().tabs.filter((tab)=> this.route.params.tabs == tab.name)[0]
     },
 }
 </script>
